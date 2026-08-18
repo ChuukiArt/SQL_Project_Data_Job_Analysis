@@ -11,7 +11,7 @@ Question: What are the top skills based on salary?
 
 SELECT
     skills_dim.skills,
-    ROUND(AVG(salary_year_avg), 0) as salary_average
+    ROUND(AVG(salary_year_avg), 0) as avg_salary
 FROM 
     job_postings_fact
 INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
@@ -19,12 +19,12 @@ INNER JOIN skills_dim ON skills_dim.skill_id = skills_job_dim.skill_id
 WHERE
     job_postings_fact.salary_year_avg IS NOT null AND
     job_postings_fact.job_title_short = 'Data Analyst'
-    -- AND job_postings_fact.job_work_from_home = TRUE -- Remote work
+    AND job_postings_fact.job_work_from_home = TRUE -- Remote work
 GROUP BY
     skills_dim.skill_id
 ORDER BY
-    salary_average DESC
-LIMIT 25
+    avg_salary DESC
+LIMIT 10
 
 /*
 SVN's $400K is likely a data artifact (tiny sample size) — legacy tech, not a real signal.
