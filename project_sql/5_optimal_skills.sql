@@ -6,7 +6,7 @@ Question: What are the most optimal skills to learn - High Demand and High Payin
     offering strategic insights for career development in data analyssis
 */
 
-
+-- Method using CTE
 WITH skills_demand AS(
     SELECT
         skills_dim.skill_id,
@@ -55,5 +55,26 @@ ORDER BY
     avg_salary DESC,
     demand_count DESC
 
+-- rewrite to be more concise
 
-
+SELECT 
+    skills_dim.skill_id,
+    skills_dim.skills,
+    COUNT(job_postings_fact.job_id) as demand_count,
+    ROUND(AVG(job_postings_fact.salary_year_avg), 0) as avg_salary
+FROM
+    job_postings_fact
+    INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
+    INNER JOIN skills_dim ON skills_dim.skill_id = skills_job_dim.skill_id
+WHERE
+    job_postings_fact.salary_year_avg IS NOT null AND
+    job_postings_fact.job_title_short = 'Data Analyst'
+    AND job_postings_fact.job_work_from_home = TRUE -- Remote work
+GROUP BY
+    skills_dim.skill_id
+HAVING
+    COUNT(job_postings_fact.job_id) > 10
+ORDER BY
+    avg_salary DESC,
+    demand_count ASC
+limit 25
