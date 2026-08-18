@@ -25,8 +25,6 @@ WITH top_paying_jobs AS(
     LIMIT 10
 )
 
-
-
 SELECT
     top_paying_jobs.*,
     skills_dim.skills
