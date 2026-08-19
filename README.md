@@ -205,4 +205,19 @@ Most Optimal Skills to Acquire (Demand + Salary Balance)
 
 # What I Learned
 
+**Complex Query Crafting:** I learned how to write advanced SQL queries, using methods like merging tables, subqueries and CTE's.
+
+**Data Aggregation:** Familiarised myself with using GROUP BY and HAVING, allowing me to use aggregate functions to make more detailed queries.
+
+**Analytical ability:** Level up my real world, puzzel solving skills, turning questions into insightful SQL queries.
 # Conclusions
+
+## Insights
+1. **Top-Paying Jobs:** The highest-paying remote data analyst roles span from $184,000 to $650,000, with the highest salaries concentrated in senior/leadership titles like Director and Principal Data Analyst rather than standard analyst positions.
+2. **Skills for Top-Paying Jobs:** SQL and Python are the most frequently required skills among top-paying roles, appearing in 8 and 7 of the top 10 listings respectively, making them the baseline expectation for high-paying analyst positions.
+3. **Most In-Demand Skills:** SQL is by far the most requested skill across all remote data analyst postings, followed by Excel and Python, confirming these three as the core foundational toolkit for the role.
+4. **Skills With the Highest Salaries:** Specialized skills like PySpark, Bitbucket, and Couchbase are associated with the highest average salaries, showing that niche technical and big-data expertise can command a premium over traditional analyst tools.
+5. **Optimal Skills:** Python offers the best combination of high demand and strong pay, making it the most optimal skill to learn for maximizing both job security and earning potential, while niche cloud/big-data skills offer a higher salary ceiling for those willing to specialize.
+
+## Closing Thoughts
+I learned a lot with SQL, PostgresSQL, GIT and GitHub thoughout this project. Putting my Theoretical SQL knowledge to use by delivering a real project, and solidifying my SQL fundamentals. The findings from this analysis will serve as a useful guide to help prioritise which data analyst skills to learn and better navigate the job market.
